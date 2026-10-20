@@ -30,3 +30,9 @@
 - `>> file` appends normal output, `2>> file` appends error output
 - `> file` on its own empties a file
 - The loop body skips the failing run, so the total is count + 1
+
+### find + xargs (zip all HTML files)
+- `find . -name "*.html" -type f | xargs -d '\n' zip html.zip`
+- xargs turns lines of text into arguments; zip needs arguments, not piped text
+- By default xargs splits on spaces, so `-d '\n'` makes it split only on new lines
+- Safer: `find ... -print0 | xargs -0 ...`
