@@ -36,3 +36,8 @@
 - xargs turns lines of text into arguments; zip needs arguments, not piped text
 - By default xargs splits on spaces, so `-d '\n'` makes it split only on new lines
 - Safer: `find ... -print0 | xargs -0 ...`
+
+### Most recently changed file
+- `find . -type f -printf '%T@ %p\n' | sort -n -r | head -n 1`
+- `%T@` = last-changed time as seconds (sortable), `%p` = path, `\n` at the end
+- The time goes first, because `sort -n` sorts by the number at the start of each line
