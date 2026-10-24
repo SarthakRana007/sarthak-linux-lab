@@ -28,6 +28,7 @@ touch 'my file.txt' && touch my file.txt
 
 saved="my file.txt"
 
+# shellcheck disable=SC2086  # intentional: ls is used only to fail
 rm $saved
 
 echo "remove without quotes" 

@@ -4,6 +4,8 @@
 #when set -u was used, it  gave error in the script which says Pwd is unbound variable
 
 set -u
+
+# shellcheck disable=SC2154  # intentional: ls is used only to fail
 saved=$Pwd
 
-echo "the current directory is $savEd"
+echo "the current directory is $saved"

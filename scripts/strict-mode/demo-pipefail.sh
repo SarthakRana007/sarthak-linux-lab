@@ -15,6 +15,8 @@
 # Lesson: without pipefail, a broken first step in a pipe
 #         can look like success.
 
+# shellcheck disable=SC2012  # intentional: ls is used only to fail
+
 set -o pipefail
 ls project? | sort
 echo "$?"
