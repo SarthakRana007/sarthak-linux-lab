@@ -14,3 +14,7 @@
 #
 # Lesson: without pipefail, a broken first step in a pipe
 #         can look like success.
+
+set -o pipefail
+ls project? | sort
+echo "$?"
